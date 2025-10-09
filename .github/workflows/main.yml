@@ -1,1 +1,25 @@
-a = 100
+name: Setup Googlecloud
+
+
+on:
+  push:
+    branches: ["master"]
+
+jobs:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: install source code
+      uses: actions/chekout@v4
+    
+    - name: Install Google Cloud SDK
+      run: curl https://sdk.cloud.google.com | bash > /dev/null
+
+    - name: Add gcloud to PATH
+      run: source "$HOME/google-cloud-sdk/path.bash.inc"
+
+    - name: Update kubectl component
+      run: gcloud components update kubectl
+
+    - name: Authenticate service account
+      run: gcloud auth activate-service-account --key-file service-account.json
