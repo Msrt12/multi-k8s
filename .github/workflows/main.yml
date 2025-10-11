@@ -23,6 +23,14 @@ jobs:
       - name: Update kubectl component
         run: sudo apt-get install kubectl
 
+      - name: Install GKE auth plugin
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          install_components: 'gke-gcloud-auth-plugin'
+
+      - name: Enable GKE auth plugin
+        run: echo "USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> $GITHUB_ENV
+
       - name: Authenticate service account
         uses: google-github-actions/auth@v2
         with:
