@@ -26,17 +26,17 @@ jobs:
       - name: Authenticate service account
         uses: google-github-actions/auth@v2
         with:
-          credential_json: ${{ secrets.GCP_CREDENTIALS }}
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
       
       - name: Permission for gcloud to have access to our project 
         run: gcloud config set project $PROJECT_ID
         env:
-          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+          GCP_PROJECT_ID: ${{ secrets.PROJECT_ID }}
 
       - name: Set up our location
         run: gcloud config set compute/region $GCP_REGION
         env:
-          GCP_REGION: ${{secrets.GCP_REGION}}
+          GCP_REGION: ${{ secrets.GCP_REGION }}
 
       - name: Set up our cluster
         run: gcloud container clusters get-credentials $GKE_CLUSTER
