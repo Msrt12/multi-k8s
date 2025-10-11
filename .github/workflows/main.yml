@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: install source code
-        uses: actions/chekout@v4
+        uses: actions/checkout@v4
       
       - name: Install Google Cloud SDK
         run: curl https://sdk.cloud.google.com | bash > /dev/null
