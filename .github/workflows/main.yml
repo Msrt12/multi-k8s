@@ -29,7 +29,7 @@ jobs:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
       
       - name: Permission for gcloud to have access to our project 
-        run: gcloud config set project $PROJECT_ID
+        run: gcloud config set project $GCP_PROJECT_ID
         env:
           GCP_PROJECT_ID: ${{ secrets.PROJECT_ID }}
 
