@@ -21,7 +21,7 @@ jobs:
         run: source "$HOME/google-cloud-sdk/path.bash.inc"
 
       - name: Update kubectl component
-        run: gcloud components update kubectl
+        run: sudo apt-get install kubectl
 
       - name: Authenticate service account
         uses: google-github-actions/auth@v2
