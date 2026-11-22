@@ -1,7 +1,13 @@
 
 # Multi-Container Kubernetes Deployment
 
+## Architecture
+
+![Multi-Container Kubernetes Architecture](i.png)
+
+
 A multi-container application deployed using **Docker and Kubernetes**, demonstrating container orchestration, microservices communication, networking, and application deployment automation.
+
 
 ## Overview
 
